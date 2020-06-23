@@ -3,7 +3,7 @@ Part of that file belongs to Swan.
 Source code available at https://github.com/Skript-MC/Swan.
 */
 
-const client = require('./../app');
+const client = require('../app');
 
 async function messageHandler(message) {
   if (message.author.bot) return;

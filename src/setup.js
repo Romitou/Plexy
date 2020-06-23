@@ -1,3 +1,7 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable no-restricted-syntax */
+
 /*
 Part of that file belongs to Swan.
 Source code available at https://github.com/Skript-MC/Swan.
@@ -32,9 +36,9 @@ async function loadCommands(client) {
 }
 
 async function loadConfig(client) {
-  const config = require('./../config.json');
+  const config = require('../config.json'); // eslint-disable-line global-require
   client.config = config;
-  console.log('[Plexy] Configuration loaded.')
+  console.log('[Plexy] Configuration loaded.');
 }
 
 module.exports = { loadCommands, loadEvents, loadConfig };

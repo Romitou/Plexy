@@ -1,4 +1,4 @@
-const client = require('./../app');
+const client = require('../app');
 
 async function readyHandler() {
   client.user.setActivity('test');

@@ -10,4 +10,4 @@ module.exports = {
       .setDescription(args.join(' '));
     message.channel.send(embed);
   },
-}
+};
