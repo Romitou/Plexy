@@ -1,0 +1,28 @@
+{
+  "name": "plexy",
+  "version": "1.0.0",
+  "description": "Ticket bot manager",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Romitou/Plexy.git"
+  },
+  "author": "Romitou <romitou@protonmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Romitou/Plexy/issues"
+  },
+  "homepage": "https://github.com/Romitou/Plexy#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1"
+  }
+}
