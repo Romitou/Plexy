@@ -1,9 +1,13 @@
 const Discord = require('discord.js');
-const loadEvents = require('./setup');
+const setupFunctions = require('./setup');
 require('dotenv').config();
 
 const client = new Discord.Client();
 
-loadEvents(client);
+setupFunctions.loadConfig(client);
+setupFunctions.loadEvents(client);
+setupFunctions.loadCommands(client);
 
 client.login(process.env.DISCORD_API);
+
+module.exports = client;
