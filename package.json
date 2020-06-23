@@ -2,9 +2,9 @@
   "name": "plexy",
   "version": "1.0.0",
   "description": "Ticket bot manager",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./src/app.js",
     "lint": "eslint ."
   },
   "repository": {
