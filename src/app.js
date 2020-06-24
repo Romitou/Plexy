@@ -1,13 +1,18 @@
+/* Importing dependencies */
 const Discord = require('discord.js');
-const setupFunctions = require('./setup');
+const moment = require('moment');
+const setup = require('./setup');
 require('dotenv').config();
 
+/* Create and export client */
 const client = new Discord.Client();
-
-setupFunctions.loadConfig(client);
-setupFunctions.loadEvents(client);
-setupFunctions.loadCommands(client);
-
-client.login(process.env.DISCORD_API);
-
 module.exports = client;
+
+/* Load and setup client */
+setup.loadConfig(client);
+setup.loadEvents(client);
+setup.loadCommands(client);
+moment.locale('fr');
+
+/* Login client (with token provided in .env) */
+client.login(process.env.DISCORD_API);
