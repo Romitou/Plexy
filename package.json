@@ -11,7 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/Romitou/Plexy.git"
   },
-  "author": "Romitou <romitou@protonmail.com>",
+  "authors": [
+    "Romitou#9685"
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Romitou/Plexy/issues"
@@ -20,7 +22,8 @@
   "dependencies": {
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "moment": "^2.27.0"
   },
   "devDependencies": {
     "eslint": "^7.3.1",
