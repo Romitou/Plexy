@@ -1,11 +1,11 @@
 /* Importing dependencies */
-const Discord = require('discord.js');
 const moment = require('moment');
+const { Client } = require('discord.js');
 const setup = require('./setup');
 require('dotenv').config();
 
 /* Create and export client */
-const client = new Discord.Client();
+const client = new Client();
 module.exports = client;
 
 /* Load and setup client */
