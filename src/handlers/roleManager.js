@@ -1,5 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 
+const { removeReaction } = require('../utils');
+
 async function load(client) {
   const roleChannel = await client.channels.cache.get(client.config.autorole.channel);
   roleChannel.messages.fetch({ limit: 100 }, true);
@@ -12,6 +14,7 @@ async function roleManage(member, id, client) {
 }
 
 async function manage(user, reaction, client) {
+  removeReaction(reaction.message, user);
   const member = client.guild.members.cache.get(user.id);
   if (client.config.autorole.data.french.reaction
     === reaction.emoji.name) roleManage(member, client.config.autorole.data.french.role, client);
