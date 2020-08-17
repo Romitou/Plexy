@@ -1,6 +1,6 @@
 {
   "name": "plexy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ticket bot manager",
   "main": "./src/app.js",
   "scripts": {
@@ -14,12 +14,13 @@
   "authors": [
     "Romitou#9685"
   ],
-  "license": "Apache-2.0",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/Romitou/Plexy/issues"
   },
   "homepage": "https://github.com/Romitou/Plexy#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",

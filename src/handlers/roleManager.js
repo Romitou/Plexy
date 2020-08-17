@@ -9,17 +9,18 @@ async function load(client) {
 
 async function roleManage(member, id, client) {
   const role = client.guild.roles.resolve(id);
-  if (!member.roles.cache.has(role.id)) member.roles.add(role);
-  if (member.roles.cache.has(role.id)) member.roles.remove(role);
+  if (!member.roles.cache.has(role.id)) await member.roles.add(role);
+  if (member.roles.cache.has(role.id)) await member.roles.remove(role);
 }
 
 async function manage(user, reaction, client) {
-  removeReaction(reaction.message, user);
-  const member = client.guild.members.cache.get(user.id);
-  if (client.config.autorole.data.french.reaction
-    === reaction.emoji.name) roleManage(member, client.config.autorole.data.french.role, client);
-  if (client.config.autorole.data.english.reaction
-    === reaction.emoji.name) roleManage(member, client.config.autorole.data.english.role, client);
+  await removeReaction(reaction.message, user);
+  const member = client.guild.members.resolve(user.id);
+  const roleConfig = client.config.autorole.data;
+  if (roleConfig.french.reaction
+    === reaction.emoji.name) await roleManage(member, roleConfig.french.role, client);
+  if (roleConfig.english.reaction
+    === reaction.emoji.name) await roleManage(member, roleConfig.english.role, client);
 }
 
 module.exports = { load, manage };

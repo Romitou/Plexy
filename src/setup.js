@@ -14,7 +14,7 @@ const Discord = require('discord.js');
 
 /* Load client events function */
 async function loadEvents(client) {
-  console.log('[Plexy] Loading events ...');
+  console.log(`[${client.name}] Loading events ...`);
   const filePath = path.join(__dirname, 'events');
   const files = await fs.readdir(filePath);
   for (const file of files) {
@@ -30,7 +30,7 @@ async function loadCommands(client) {
   client.commands = new Discord.Collection();
   const filePath = path.join(__dirname, 'commands');
   const files = await fs.readdir(filePath);
-  console.log('[Plexy] Loading commands ...');
+  console.log(`[${client.name}] Loading commands ...`);
   for (const file of files) {
     const command = require(path.join(filePath, file));
     client.commands.set(command.name, command);
@@ -42,7 +42,7 @@ async function loadCommands(client) {
 async function loadHandlers(client) {
   const filePath = path.join(__dirname, 'handlers');
   const files = await fs.readdir(filePath);
-  console.log('[Plexy] Loading handlers ...');
+  console.log(`[${client.name}] Loading handlers ...`);
   for (const file of files) {
     const handler = require(path.join(filePath, file));
     handler.load(client);
@@ -52,9 +52,9 @@ async function loadHandlers(client) {
 
 /* Load client config function */
 async function loadConfig(client) {
-  const config = require('../config.json'); // eslint-disable-line global-require
-  client.config = config;
-  console.log('[Plexy] Configuration loaded.');
+  client.config = require('../config.json');
+  client.name = client.config.botname;
+  console.log(`[${client.name}] Configuration loaded.`);
 }
 
 module.exports = {

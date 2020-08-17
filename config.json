@@ -1,4 +1,6 @@
 {
+    "botname": "Wolfo",
+    "prefix": ".",
     "guild": "681800054893576222",
     "support": {
         "category": "701384969624223794",
@@ -9,7 +11,14 @@
             "bot": "701435807017468015"
         }
     },
+    "moderation": {
+        "channel": "710554533700436061"
+    },
     "autorole": {
+        "join": {
+            "role": "702972315729920122",
+            "reason": "Assignment automatique du rôle Membre."
+        },
         "channel": "725316962376351774",
         "data": {
             "french": {
@@ -23,6 +32,10 @@
         }
     },
     "color": {
-        "info": "#3b75e6"
+        "info": "#3b75e6",
+        "okay": "#adf542",
+        "warn": "#f5aa42",
+        "alert": "#f55a42",
+        "magic": "#42f59e"
     }
 }

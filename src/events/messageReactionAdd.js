@@ -5,9 +5,9 @@ const roleManager = require('../handlers/roleManager');
 async function messageReactionAddHandler(reaction, user) {
   if (user.bot) return;
   if (reaction.message.channel.id === client.config.support.channel) {
-    ticketManager.create(user, reaction, client);
+    await ticketManager.create(user, reaction, client);
   } else if (reaction.message.channel.id === client.config.autorole.channel) {
-    roleManager.manage(user, reaction, client);
+    await roleManager.manage(user, reaction, client);
   }
 }
 
