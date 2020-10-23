@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Romitou/Plexy#readme",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "discord.js": "^12.4.0",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
