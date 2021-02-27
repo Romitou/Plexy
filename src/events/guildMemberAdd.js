@@ -2,10 +2,11 @@ const { MessageEmbed } = require('discord.js');
 const client = require('../app');
 
 async function guildMemberAdd(member) {
-  await member.roles.add(
-    await client.guild.roles.resolve(client.config.autorole.join.role),
-    client.config.autorole.join.reason,
-  );
+  if (client?.config?.autorole?.join?.role)
+    await member.roles.add(
+      await client.guild.roles.resolve(client.config.autorole.join.role),
+      client.config.autorole.join.reason,
+    );
 
   const embed = new MessageEmbed()
     .setColor(client.config.color.okay)
