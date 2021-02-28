@@ -1,8 +1,10 @@
 {
-    "botname": "Wolfo",
+    "botname": "Plexy",
     "prefix": ".",
-    "guild": "681800054893576222",
+    "guild": "754277290631888947",
+    "repo": "",
     "support": {
+        "enabled": false,
         "category": "701384969624223794",
         "channel": "701385013916336158",
         "roles": {
@@ -16,16 +18,18 @@
     },
     "autorole": {
         "join": {
+            "enabled": false,
             "role": "702972315729920122",
             "reason": "Assignment automatique du rôle Membre."
         },
-        "channel": "725316962376351774",
+        "channel": "815005971314376704",
+        "enabled": true,
         "data": {
-            "french": {
+            "one": {
                 "reaction": "🇫🇷",
-                "role": "725317311719800892"
+                "role": "815009782532276265"
             },
-            "english": {
+            "two": {
                 "reaction": "🇬🇧",
                 "role": "725317572467359744"
             }

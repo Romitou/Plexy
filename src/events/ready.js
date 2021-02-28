@@ -8,7 +8,6 @@ async function readyHandler() {
   await presenceManager.setPresence(client);
 
   console.log(`[${client.name}] Successfully ready to go.`);
-  await client.guild.channels.resolve(client.config.moderation.channel).send(`<a:yep:712759133132029983> ${client.name} redémarré.`);
 
   setInterval(() => {
     presenceManager.setPresence(client);

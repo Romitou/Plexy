@@ -3,6 +3,7 @@
 const { removeReaction } = require('../utils');
 
 async function load(client) {
+  if (!client?.config?.autorole?.enabled) return;
   const roleChannel = await client.channels.cache.get(client.config.autorole.channel);
   roleChannel.messages.fetch({ limit: 100 }, true);
 }
@@ -17,10 +18,10 @@ async function manage(user, reaction, client) {
   await removeReaction(reaction.message, user);
   const member = client.guild.members.resolve(user.id);
   const roleConfig = client.config.autorole.data;
-  if (roleConfig.french.reaction
-    === reaction.emoji.name) await roleManage(member, roleConfig.french.role, client);
-  if (roleConfig.english.reaction
-    === reaction.emoji.name) await roleManage(member, roleConfig.english.role, client);
+  if (roleConfig.one.reaction
+    === reaction.emoji.name) await roleManage(member, roleConfig.one.role, client);
+  if (roleConfig.two.reaction
+    === reaction.emoji.name) await roleManage(member, roleConfig.two.role, client);
 }
 
 module.exports = { load, manage };

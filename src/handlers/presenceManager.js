@@ -6,7 +6,12 @@ async function load() {}
 // This function is just fun.
 // I didn't know what to do.
 async function getGitHubInfo(type) {
-  const githubApi = await Axios.get('https://api.github.com/repos/Romitou/Wolfo/releases')
+  const githubApi = await Axios.get(process.env.GITHUB_REPO, {
+    auth: {
+      username: process.env.GITHUB_USERNAME,
+      password: process.env.GITHUB_PASSWORD,
+    },
+  })
     .catch(console.error);
   const lastRelease = githubApi.data[0];
   if (type === 'downloads') return lastRelease.assets[0].download_count;

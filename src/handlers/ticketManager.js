@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const { removeReaction } = require('../utils');
 
 async function load(client) {
+  if (!client?.config?.support?.enabled) return;
   const ticketChannel = await client.channels.cache.get(client.config.support.channel);
   ticketChannel.messages.fetch({ limit: 100 }, true);
 }
